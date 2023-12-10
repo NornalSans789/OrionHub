@@ -1,0 +1,371 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/thanhdat4461/OrionMoblie/main/source')))()
+OrionLib:MakeNotification({
+	Name = "Orion Hub!",
+	Content = "Checking game..",
+	Image = "rbxassetid://4483345998",
+	Time = 2.5
+})
+if game.PlaceId == 15068118098 then
+wait(3)
+OrionLib:MakeNotification({
+	Name = "Welcome, "..game.Players.LocalPlayer.Name,
+	Content = "You are now Playing Super Toilet Brawl!",
+	Image = "rbxassetid://4483345998",
+	Time = 2.5
+})
+
+OrionLib:MakeNotification({
+	Name = "Remember!",
+	Content = "You must choose a large morph or a buffalo to farm without worrying about dying",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+
+local player = game.Players.LocalPlayer
+local Player = game.Players.LocalPlayer
+local Window = OrionLib:MakeWindow({Name = "Super Toilet Brawl", HidePremium = false, SaveConfig = false, ConfigFolder = "SuperToilet"})
+
+while getgenv().c == true do
+wait(.1)
+autofarm()
+end
+
+-- all mode
+function autofarm()
+toilet()
+massivetoilet()
+bigtoilet()
+bosstoilet()
+titantoilet()
+gianttoilet()
+corrupted()
+end
+
+function massivetoilet()
+game:GetService("VirtualUser"):ClickButton1(Vector2.new(9e9, 9e9))
+if game.Workspace.Toilets:FindFirstChild("Massive Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Massive Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Massive Glasses Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Massive Glasses Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Massive Armorred Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Massive Armorred Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Massive Metal Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Massive Metal Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+game:GetService("VirtualUser"):ClickButton1(Vector2.new(9e9, 9e9))
+game:GetService("VirtualUser"):ClickButton1(Vector2.new(9e9, 9e9))
+end
+end
+end
+end
+end
+
+function titantoilet()
+game:GetService("VirtualUser"):ClickButton1(Vector2.new(9e9, 9e9))
+if game.Workspace.Toilets:FindFirstChild("Titan Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Titan Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Titan Glasses Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Titan Glasses Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Vacuum Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Vacuum Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Titan Armorred Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Titan Armorred Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Titan Metal Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Titan Metal Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Masked Titan Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Masked Titan Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+game:GetService("VirtualUser"):ClickButton1(Vector2.new(9e9, 9e9))
+game:GetService("VirtualUser"):ClickButton1(Vector2.new(9e9, 9e9))
+end
+end
+end
+end
+end
+end
+end
+
+function gianttoilet()
+game:GetService("VirtualUser"):ClickButton1(Vector2.new(9e9, 9e9))
+if game.Workspace.Toilets:FindFirstChild("Giant Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Giant Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Giant Glasses Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Giant Glasses Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Giant Armorred Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Giant Armorred Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Dual Laser Strider Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Dual Laser Strider Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Laser Strider Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Laser Strider Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Giant Upgraded Spider Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Giant Upgraded Spider Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Giant Rocket Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Giant Rocket Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Buzzsaw UFO Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Buzzsaw UFO Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Buzzsaw Oven Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Buzzsaw Oven Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Dual Buzzsaw Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Dual Buzzsaw Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Quad Buzzsaw Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Quad Buzzsaw Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Astro UFO Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Astro UFO Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Flamethrower Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Flamethrower Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Acid Skull Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Acid Skull Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Upgraded Flamethrower Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Upgraded Flamethrower Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Quad Launcher Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Quad Launcher Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Multi Launcher Plane Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Multi Launcher Plane Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Giant Metal Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Giant Metal Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Dual Laser Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Dual Laser Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+game:GetService("VirtualUser"):ClickButton1(Vector2.new(9e9, 9e9))
+game:GetService("VirtualUser"):ClickButton1(Vector2.new(9e9, 9e9))
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+
+function corrupted()
+game:GetService("VirtualUser"):ClickButton1(Vector2.new(9e9, 9e9))
+if game.Workspace.Toilets:FindFirstChild("Corrupted Camerahead") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Corrupted Camerahead"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Buzzsaw Mutant Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Buzzsaw Mutant Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Corrupted Speakerhead") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Corrupted Speakerhead"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Corrupted Big Camerahead") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Corrupted Big Camerahead"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Corrupted Big Speakerhead") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Corrupted Big Speakerhead"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+game:GetService("VirtualUser"):ClickButton1(Vector2.new(9e9, 9e9))
+game:GetService("VirtualUser"):ClickButton1(Vector2.new(9e9, 9e9))
+end
+end
+end
+end
+end
+end
+
+function toilet()
+game:GetService("VirtualUser"):ClickButton1(Vector2.new(9e9, 9e9))
+if game.Workspace.Toilets:FindFirstChild("Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Glasses Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Glasses Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Armorred Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Armorred Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Jetpack Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Jetpack Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Metal Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Metal Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Glitch Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Glitch Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Police Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Police Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+game:GetService("VirtualUser"):ClickButton1(Vector2.new(9e9, 9e9))
+game:GetService("VirtualUser"):ClickButton1(Vector2.new(9e9, 9e9))
+end
+end
+end
+end
+end
+end
+end
+end
+
+function bosstoilet()
+game:GetService("VirtualUser"):ClickButton1(Vector2.new(9e9, 9e9))
+if game.Workspace.Toilets:FindFirstChild("Fake Buzzsaw Boss Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Fake Buzzsaw Boss Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Fake Laser Boss Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Fake Laser Boss Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Fake Missile Boss Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Fake Missile Boss Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Fake Boss Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Fake Boss Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Scientist Boss Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Scientist Boss Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Boss Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Boss Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Boss Toilet 2.0") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Boss Toilet 2.0"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Boss Toilet 3.0") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Boss Toilet 3.0"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Boss Toilet 4.0") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Boss Toilet 4.0"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+game:GetService("VirtualUser"):ClickButton1(Vector2.new(9e9, 9e9))
+game:GetService("VirtualUser"):ClickButton1(Vector2.new(9e9, 9e9))
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+
+function bigtoilet()
+game:GetService("VirtualUser"):ClickButton1(Vector2.new(9e9, 9e9))
+if game.Workspace.Toilets:FindFirstChild("Spider Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Spider Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Big Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Big Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Big Glasses Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Big Glasses Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Tri Launcher Copter Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Tri Launcher Copter Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Launcher Copter Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Launcher Copter Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Angel Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Angel Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Big Metal Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Big Metal Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+if game.Workspace.Toilets:FindFirstChild("Big Police Toilet") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Big Police Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
+game:GetService("VirtualUser"):ClickButton1(Vector2.new(9e9, 9e9))
+game:GetService("VirtualUser"):ClickButton1(Vector2.new(9e9 ,9e9))
+end
+end
+end
+end
+end
+end
+end
+end
+end
+
+
+
+
+
+
+-- Code Gui
+local MainTab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local MainSection = MainTab:AddSection({
+	Name = "Main Section"
+})
+
+MainTab:AddToggle({
+	Name = "God Mode [Visual]",
+	Default = false,
+	Callback = function(text)
+getgenv().Safe = text
+
+if getgenv().Safe == true then
+OrionLib:MakeNotification({
+	Name = "Warning!",
+	Content = "This is just visualization",
+	Image = "rbxassetid://4483345998",
+	Time = 2.5
+})
+while getgenv().Safe == true do
+wait(.1)
+local HP = game.Players.LocalPlayer.Character.Humanoid.MaxHealth
+game.Players.LocalPlayer.Character.Humanoid.Health = HP
+game.Players.LocalPlayer.Character.Humanoid.MaxHealth = 9999999999
+end
+end
+	end    
+})
+
+MainTab:AddButton({
+        Name = "Speed Boost [Bypass]",
+        Callback = function()
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed += 25
+          end    
+})
+
+MainTab:AddButton({
+        Name = "Jump Boost [Bypass]",
+        Callback = function()
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower += 25
+          end    
+})
+
+local FarmTab = Window:MakeTab({
+	Name = "Farm [Beta]",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local FarmSection = FarmTab:AddSection({
+	Name = "Farm Section"
+})
+
+FarmTab:AddToggle({
+	Name = "Auto Farm",
+	Default = false,
+	Callback = function(vl)
+getgenv().c = vl
+
+if getgenv().c == true then
+OrionLib:MakeNotification({
+	Name = "Farming!",
+	Content = "Started farming the current mode!",
+	Image = "rbxassetid://4483345998",
+	Time = 2.5
+})
+OrionLib:MakeNotification({
+	Name = "Remember!",
+	Content = "Wave 20 or wave 30 or Wave 35 or Wave 40 requires 1 or 2 person to be able to farm without losing the mode when dying",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+end
+	end    
+})
+
+local CreditTab = Window:MakeTab({
+	Name = "Credit",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local CreditSection = CreditTab:AddSection({
+	Name = "Credit Section"
+})
+
+CreditTab:AddLabel("By @masket_smile6013(Youtube)")
+
+local CreditRemakeSection = CreditTab:AddSection({
+	Name = "Credit Remake Section"
+})
+CreditTab:AddLabel("By @SansYT789(Youtube)")
+
+else
+OrionLib:MakeNotification({
+	Name = "Orion Hub!",
+	Content = "You are now Playing Not Supported game! Sorry.",
+	Image = "rbxassetid://4483345998",
+	Time = 2.5
+})
+OrionLib:Init()
+end
