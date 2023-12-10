@@ -132,7 +132,7 @@ if game.Workspace.Toilets:FindFirstChild('["Angel Toilet"]') then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Angel Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
 if game.Workspace.Toilets:FindFirstChild('["Big Metal Toilet"]') then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Big Metal Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
-49 if game.Workspace.Toilets:FindFirstChild('["Big Police Toilet"]') then
+if game.Workspace.Toilets:FindFirstChild('["Big Police Toilet"]') then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Big Police Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
 game:GetService("VirtualUser"):ClickButton1(Vector2.new(9e9, 9e9))
 game:GetService("VirtualUser"):ClickButton1(Vector2.new(9e9 ,9e9))
