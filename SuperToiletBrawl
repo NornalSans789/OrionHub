@@ -21,27 +21,10 @@ OrionLib:MakeNotification({
 	Time = 5
 })
 
-local player = game.Players.LocalPlayer
 local Player = game.Players.LocalPlayer
 local Window = OrionLib:MakeWindow({Name = "Super Toilet Brawl", HidePremium = false, SaveConfig = false, ConfigFolder = "SuperToilet"})
 
-while getgenv().c == true do
-wait(.1)
-autofarm()
-end
-
--- all mode
-function autofarm()
-toilet()
-massivetoilet()
-bigtoilet()
-bosstoilet()
-titantoilet()
-gianttoilet()
-corrupted()
-end
-
-function massivetoilet()
+function alltoilet()
 game:GetService("VirtualUser"):ClickButton1(Vector2.new(9e9, 9e9))
 if game.Workspace.Toilets:FindFirstChild('["Massive Toilet"]') then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Massive Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
@@ -53,13 +36,6 @@ if game.Workspace.Toilets:FindFirstChild('["Massive Metal Toilet"]') then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Massive Metal Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
 game:GetService("VirtualUser"):ClickButton1(Vector2.new(9e9, 9e9))
 game:GetService("VirtualUser"):ClickButton1(Vector2.new(9e9, 9e9))
-end
-end
-end
-end
-end
-
-function titantoilet()
 game:GetService("VirtualUser"):ClickButton1(Vector2.new(9e9, 9e9))
 if game.Workspace.Toilets:FindFirstChild('["Titan Toilet"]') then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Titan Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
@@ -75,15 +51,6 @@ if game.Workspace.Toilets:FindFirstChild('["Masked Titan Toilet"]') then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Masked Titan Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
 game:GetService("VirtualUser"):ClickButton1(Vector2.new(9e9, 9e9))
 game:GetService("VirtualUser"):ClickButton1(Vector2.new(9e9, 9e9))
-end
-end
-end
-end
-end
-end
-end
-
-function gianttoilet()
 game:GetService("VirtualUser"):ClickButton1(Vector2.new(9e9, 9e9))
 if game.Workspace.Toilets:FindFirstChild('["Giant Toilet"]') then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Giant Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
@@ -125,28 +92,6 @@ if game.Workspace.Toilets:FindFirstChild('["Dual Laser Toilet"]') then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Dual Laser Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
 game:GetService("VirtualUser"):ClickButton1(Vector2.new(9e9, 9e9))
 game:GetService("VirtualUser"):ClickButton1(Vector2.new(9e9, 9e9))
-end
-end
-end
-end
-end
-end
-end
-end
-end
-end
-end
-end
-end
-end
-end
-end
-end
-end
-end
-end
-
-function corrupted()
 game:GetService("VirtualUser"):ClickButton1(Vector2.new(9e9, 9e9))
 if game.Workspace.Toilets:FindFirstChild('["Corrupted Camerahead"]') then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Corrupted Camerahead"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
@@ -160,14 +105,6 @@ if game.Workspace.Toilets:FindFirstChild('["Corrupted Big Speakerhead"]') then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Corrupted Big Speakerhead"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
 game:GetService("VirtualUser"):ClickButton1(Vector2.new(9e9, 9e9))
 game:GetService("VirtualUser"):ClickButton1(Vector2.new(9e9, 9e9))
-end
-end
-end
-end
-end
-end
-
-function toilet()
 game:GetService("VirtualUser"):ClickButton1(Vector2.new(9e9, 9e9))
 if game.Workspace.Toilets:FindFirstChild("Toilet") then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets.Toilet.HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
@@ -185,16 +122,6 @@ if game.Workspace.Toilets:FindFirstChild('["Police Toilet"]') then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Police Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
 game:GetService("VirtualUser"):ClickButton1(Vector2.new(9e9, 9e9))
 game:GetService("VirtualUser"):ClickButton1(Vector2.new(9e9, 9e9))
-end
-end
-end
-end
-end
-end
-end
-end
-
-function bosstoilet()
 game:GetService("VirtualUser"):ClickButton1(Vector2.new(9e9, 9e9))
 if game.Workspace.Toilets:FindFirstChild('["Fake Buzzsaw Boss Toilet"]') then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Fake Buzzsaw Boss Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
@@ -216,18 +143,6 @@ if game.Workspace.Toilets:FindFirstChild('["Boss Toilet 4.0"]') then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Boss Toilet 4.0"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
 game:GetService("VirtualUser"):ClickButton1(Vector2.new(9e9, 9e9))
 game:GetService("VirtualUser"):ClickButton1(Vector2.new(9e9, 9e9))
-end
-end
-end
-end
-end
-end
-end
-end
-end
-end
-
-function bigtoilet()
 game:GetService("VirtualUser"):ClickButton1(Vector2.new(9e9, 9e9))
 if game.Workspace.Toilets:FindFirstChild('["Spider Toilet"]') then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Toilets["Spider Toilet"].HumanoidRootPart.CFrame * CFrame.new(-1, -2, 3)
@@ -256,13 +171,62 @@ end
 end
 end
 end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
+end
 
 
 
 
 
 
--- Code Gui
 local MainTab = Window:MakeTab({
 	Name = "Main",
 	Icon = "rbxassetid://4483345998",
@@ -335,10 +299,14 @@ OrionLib:MakeNotification({
 })
 OrionLib:MakeNotification({
 	Name = "Remember!",
-	Content = "(Standard,Hard Wave 20 or wave 30), (Insane Wave 35 or Wave 40) requires 1 or 2 person to be able to farm without losing the mode when dying",
+	Content = "Wave 20 or Wave 30 or Wave 35 or Wave 40 requires 1 or 2 person to be able to farm without losing the mode when dying",
 	Image = "rbxassetid://4483345998",
 	Time = 5
 })
+while getgenv().c == true do
+wait(.000000001)
+alltoilet()
+end
 end
 	end    
 })
