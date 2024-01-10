@@ -2,6 +2,15 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/tha
 
 local Window = OrionLib:MakeWindow({Name = "Copy Position Gui", HidePremium = false, SaveConfig = false, ConfigFolder = "OrionHub"})
 
+local currentpos = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+
+spawn(function()
+while wait(0.215) do
+pcall(function()
+currentpos = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+end)
+end
+end)
 
 local Tab = Window:MakeTab({
 	Name = "Tab Main",
@@ -9,12 +18,12 @@ local Tab = Window:MakeTab({
 	PremiumOnly = false
 })
 
-Tab:AddParagraph("Current Position:",tostring(game.Players.LocalPlayer.Character.HumanoidRootPart.Position))
+Tab:AddParagraph("Current Position:",tostring(currentpos))
 
 Tab:AddButton({
 	Name = "Copy",
 	Callback = function()
-	setclipboard(tostring(game.Players.LocalPlayer.Character.HumanoidRootPart.Position))
+	setclipboard(tostring(currentpos))
       		print("Copy Success!")
   	end    
 })
