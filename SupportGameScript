@@ -28,17 +28,9 @@ end
 
 function Tween(a)
 local b = (a.Position - game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").Position).Magnitude
-local speed = 150
+local speed = 175
 tweenrach = game:GetService('TweenService'):Create(game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart"),TweenInfo.new(b/speed,Enum.EasingStyle.Linear), {CFrame=a})
 tweenrach:Play()
-if workspace.UncollectedSkins:FindFirstChild(a).TouchInterest == nil then
-OrionLib:MakeNotification({
-	Name = "Orion Hub",
-	Content = "You already have that food skin!",
-	Image = "rbxassetid://4483345998",
-	Time = 3
-})
-end
 end
 
 function TweenTp(a)
@@ -69,13 +61,6 @@ CollectTab:AddButton({
 	Name = "Collect Blueberry",
 	Callback = function()
     Tween(workspace.UncollectedSkins.Blueberry.CFrame)
-  	end    
-})
-
-CollectTab:AddButton({
-	Name = "Collect Carrot",
-	Callback = function()
-    Tween(workspace.UncollectedSkins.Carrot.CFrame)
   	end    
 })
 
@@ -339,14 +324,7 @@ TpTab:AddDropdown({
 TpTab:AddButton({
 	Name = "Tp to Place",
 	Callback = function()
-if selectplace == "..." then
-OrionLib:MakeNotification({
-	Name = "Orion Hub",
-	Content = "Please select a location to go there",
-	Image = "rbxassetid://4483345998",
-	Time = 3
-})
-elseif selectplace == "Cutting boards" then
+if selectplace == "Cutting boards" then
 Tween(CFrame.new(-167.2939453125, 43.239356994628906, -51.28073501586914))
 elseif selectplace == "Skating area" then
 Tween(CFrame.new(-68.79549407958984, -6.015318870544434, 124.84772491455078))
