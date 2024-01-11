@@ -1,6 +1,6 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/thanhdat4461/OrionMoblie/main/source')))()
 
-local Window = OrionLib:MakeWindow({Name = "Copy Gui", HidePremium = false, SaveConfig = false, ConfigFolder = "OrionHub", IntroText = "Đang tải..."})
+local Window = OrionLib:MakeWindow({Name = "Copy Gui", HidePremium = false, SaveConfig = false, ConfigFolder = "OrionHub", IntroText = "Loading..."})
 
 local Tab = Window:MakeTab({
 	Name = "Tab Main",
@@ -8,17 +8,17 @@ local Tab = Window:MakeTab({
 	PremiumOnly = false
 })
 
-Tab:AddParagraph("Toạ độ hiện tại là:", tostring(game.Players.LocalPlayer.Character.HumanoidRootPart.Position))
+Tab:AddParagraph("Current Position Is:", tostring(game.Players.LocalPlayer.Character.HumanoidRootPart.Position))
 
 Tab:AddButton({
-	Name = "Sao chép toạ độ hiện tại",
+	Name = "Copy Current Position",
 	Callback = function()
 	setclipboard(tostring(game.Players.LocalPlayer.Character.HumanoidRootPart.Position))
   	end    
 })
 
 Tab:AddButton({
-	Name = "Sao chép số id của map",
+	Name = "Copy PlaceId",
 	Callback = function()
 	setclipboard(tostring(game.PlaceId))
   	end    
@@ -31,7 +31,7 @@ local CreditTab = Window:MakeTab({
 })
 
 local CreditOwnerSection = CreditTab:AddSection({
-        Name = "Chủ sở hữu script"
+        Name = "Script Owner"
 })
 
-CreditTab:AddLabel("Bởi @SansYT789(Youtube)")
+CreditTab:AddLabel("By @SansYT789(Youtube)")
