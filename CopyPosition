@@ -1,12 +1,19 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/thanhdat4461/OrionMoblie/main/source')))()
 
-local Window = OrionLib:MakeWindow({Name = "Copy Gui", HidePremium = false, SaveConfig = false, ConfigFolder = "OrionHub", IntroText = "Loading..."})
+local Window = OrionLib:MakeWindow({Name = "Copy Gui", HidePremium = false, SaveConfig = false, ConfigFolder = "OrionHub", IntroText = "Đang tải..."})
 
-local currentpos = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+local newpos = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+local oldpos = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+local positiontextlabel = oldpos
+local placeid = game.PlaceId
 
+spawn(function()
 while wait() do
+if newpos ~= oldpos then
 pcall(function()
-currentpos = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+positiontextlabel = newpos
+end)
+end
 end
 end)
 
@@ -16,21 +23,19 @@ local Tab = Window:MakeTab({
 	PremiumOnly = false
 })
 
-Tab:AddParagraph("Current Position:",tostring(currentpos))
+Tab:AddParagraph("Toạ độ hiện tại là:", tostring(positiontextlabel))
 
 Tab:AddButton({
-	Name = "Copy Pos",
+	Name = "Sao chép toạ độ hiện tại",
 	Callback = function()
-	setclipboard(tostring(currentpos))
-      		print("Copy Success!")
+	setclipboard(tostring(newpos))
   	end    
 })
 
 Tab:AddButton({
-	Name = "Copy PlaceId",
+	Name = "Sao chép số id của map",
 	Callback = function()
-	setclipboard(tostring(game.PlaceId))
-      		print("Copy Success!")
+	setclipboard(tostring(placeid))
   	end    
 })
 
@@ -41,7 +46,7 @@ local CreditTab = Window:MakeTab({
 })
 
 local CreditOwnerSection = CreditTab:AddSection({
-        Name = "Script Owner"
+        Name = "Chủ sở hữu script"
 })
 
-CreditTab:AddLabel("By @SansYT789(Youtube)")
+CreditTab:AddLabel("Bởi @SansYT789(Youtube)")
