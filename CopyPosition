@@ -2,40 +2,25 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/tha
 
 local Window = OrionLib:MakeWindow({Name = "Copy Gui", HidePremium = false, SaveConfig = false, ConfigFolder = "OrionHub", IntroText = "Đang tải..."})
 
-local newpos = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
-local oldpos = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
-local positiontextlabel = oldpos
-local placeid = game.PlaceId
-
-spawn(function()
-while wait() do
-if newpos ~= oldpos then
-pcall(function()
-positiontextlabel = newpos
-end)
-end
-end
-end)
-
 local Tab = Window:MakeTab({
 	Name = "Tab Main",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
 
-Tab:AddParagraph("Toạ độ hiện tại là:", tostring(positiontextlabel))
+Tab:AddParagraph("Toạ độ hiện tại là:", tostring(game.Players.LocalPlayer.Character.HumanoidRootPart.Position))
 
 Tab:AddButton({
 	Name = "Sao chép toạ độ hiện tại",
 	Callback = function()
-	setclipboard(tostring(newpos))
+	setclipboard(tostring(game.Players.LocalPlayer.Character.HumanoidRootPart.Position))
   	end    
 })
 
 Tab:AddButton({
 	Name = "Sao chép số id của map",
 	Callback = function()
-	setclipboard(tostring(placeid))
+	setclipboard(tostring(game.PlaceId))
   	end    
 })
 
