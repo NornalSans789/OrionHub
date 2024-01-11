@@ -4,12 +4,6 @@ local Window = OrionLib:MakeWindow({Name = "Copy Gui", HidePremium = false, Save
 
 local currentpos = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
 
-while wait() do
-pcall(function()
-currentpos = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
-end)
-end
-
 local Tab = Window:MakeTab({
 	Name = "Tab Main",
 	Icon = "rbxassetid://4483345998",
