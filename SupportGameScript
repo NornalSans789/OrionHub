@@ -1,0 +1,437 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/thanhdat4461/OrionMoblie/main/source')))()
+
+-- local linh tinh
+local HMRP = game.Players.LocalPlayer.Character.HumanoidRootPart
+local HM = game.Players.LocalPlayer.Character.Humanoid
+
+if game.PlaceId == 15240723287 then
+OrionLib:MakeNotification({
+	Name = "Script Loading...",
+	Content = "Script has support your map: Secret Staycation",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+wait(0.15)
+local Window = OrionLib:MakeWindow({Name = "Secret Staycation", HidePremium = false, SaveConfig = false, ConfigFolder = "OrionHub", IntroText = "Loading Hub..."})
+
+-- local linh tinh :)
+local playerdrop = {}
+local player = game.Players:GetChildren()
+getgenv().selectplr = nil
+getgenv().selectstagetrain = nil
+getgenv().selectplace = nil
+
+-- function
+for i,v in pairs(player) do
+table.insert(playerdrop, v.Name)
+end
+
+function Tween(a)
+local b = (a.Position - game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").Position).Magnitude
+local speed = 150
+tweenrach = game:GetService('TweenService'):Create(game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart"),TweenInfo.new(b/speed,Enum.EasingStyle.Linear), {CFrame=a})
+tweenrach:Play()
+if workspace.UncollectedSkins:FindFirstChild(a).TouchInterest == nil then
+OrionLib:MakeNotification({
+	Name = "Orion Hub",
+	Content = "You already have that food skin!",
+	Image = "rbxassetid://4483345998",
+	Time = 3
+})
+end
+end
+
+function TweenTp(a)
+local b = (a.Position - game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").Position).Magnitude
+local speedtp = 100
+tweenrach = game:GetService('TweenService'):Create(game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart"),TweenInfo.new(b/speedtp,Enum.EasingStyle.Linear), {CFrame=a})
+tweenrach:Play()
+end
+
+local CollectTab = Window:MakeTab({
+	Name = "Tab Collect",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local CollectSection = CollectTab:AddSection({
+	Name = "Collect Section"
+})
+
+CollectTab:AddButton({
+	Name = "Collect Banana",
+	Callback = function()
+    Tween(workspace.UncollectedSkins.Banana.CFrame)
+  	end    
+})
+
+CollectTab:AddButton({
+	Name = "Collect Blueberry",
+	Callback = function()
+    Tween(workspace.UncollectedSkins.Blueberry.CFrame)
+  	end    
+})
+
+CollectTab:AddButton({
+	Name = "Collect Carrot",
+	Callback = function()
+    Tween(workspace.UncollectedSkins.Carrot.CFrame)
+  	end    
+})
+
+CollectTab:AddButton({
+	Name = "Collect Caviar",
+	Callback = function()
+    Tween(workspace.UncollectedSkins.Caviar.CFrame)
+  	end    
+})
+
+CollectTab:AddButton({
+	Name = "Collect Coconut",
+	Callback = function()
+    Tween(workspace.UncollectedSkins.Coconut.CFrame)
+  	end    
+})
+
+CollectTab:AddButton({
+	Name = "Collect Croissant",
+	Callback = function()
+    Tween(workspace.UncollectedSkins.Croissant.CFrame)
+  	end    
+})
+
+CollectTab:AddButton({
+	Name = "Collect Chocolate Doughnut",
+	Callback = function()
+    Tween(workspace.UncollectedSkins["Chocolate Doughnut"].CFrame)
+  	end    
+})
+
+CollectTab:AddButton({
+	Name = "Collect Chocolate Chip Cookie",
+	Callback = function()
+    Tween(workspace.UncollectedSkins["Chocolate Chip Cookie"].CFrame)
+  	end    
+})
+
+CollectTab:AddButton({
+	Name = "Collect Chili Pepper",
+	Callback = function()
+    Tween(workspace.UncollectedSkins["Chili Pepper"].CFrame)
+  	end    
+})
+
+CollectTab:AddButton({
+	Name = "Collect Cherry Tomato",
+	Callback = function()
+    Tween(workspace.UncollectedSkins["Cherry Tomato"].CFrame)
+  	end    
+})
+
+CollectTab:AddButton({
+	Name = "Collect Candy Cane",
+	Callback = function()
+    Tween(workspace.UncollectedSkins["Candy Cane"].CFrame)
+  	end    
+})
+
+CollectTab:AddButton({
+	Name = "Collect Egg",
+	Callback = function()
+    Tween(workspace.UncollectedSkins.Egg.CFrame)
+  	end    
+})
+
+CollectTab:AddButton({
+	Name = "Collect French Bread",
+	Callback = function()
+    Tween(workspace.UncollectedSkins["French Bread"].CFrame)
+  	end    
+})
+
+
+CollectTab:AddButton({
+	Name = "Collect Green Apple",
+	Callback = function()
+    Tween(workspace.UncollectedSkins["Green Apple"].CFrame)
+  	end    
+})
+
+CollectTab:AddButton({
+	Name = "Collect Lemon",
+	Callback = function()
+    Tween(workspace.UncollectedSkins.Lemon.CFrame)
+  	end    
+})
+
+CollectTab:AddButton({
+	Name = "Collect Lychee",
+	Callback = function()
+    Tween(workspace.UncollectedSkins.Lychee.CFrame)
+  	end    
+})
+
+CollectTab:AddButton({
+	Name = "Collect Mango",
+	Callback = function()
+    Tween(workspace.UncollectedSkins.Mango.CFrame)
+  	end    
+})
+
+CollectTab:AddButton({
+	Name = "Collect Mushroom",
+	Callback = function()
+    Tween(workspace.UncollectedSkins.Mushroom.CFrame)
+  	end    
+})
+
+CollectTab:AddButton({
+	Name = "Collect Pancake",
+	Callback = function()
+    Tween(workspace.UncollectedSkins.Pancake.CFrame)
+  	end    
+})
+
+CollectTab:AddButton({
+	Name = "Collect Peanut",
+	Callback = function()
+    Tween(workspace.UncollectedSkins.Peanut.CFrame)
+  	end    
+})
+
+CollectTab:AddButton({
+	Name = "Collect Pepperoni Pizza",
+	Callback = function()
+    Tween(workspace.UncollectedSkins["Pepperoni Pizza"].CFrame)
+  	end    
+})
+
+CollectTab:AddButton({
+	Name = "Collect Plain Bread",
+	Callback = function()
+    Tween(workspace.UncollectedSkins["Plain Bread"].CFrame)
+  	end    
+})
+
+CollectTab:AddButton({
+	Name = "Collect Potato",
+	Callback = function()
+    Tween(workspace.UncollectedSkins.Potato.CFrame)
+  	end    
+})
+
+CollectTab:AddButton({
+	Name = "Collect Pumpkin",
+	Callback = function()
+    Tween(workspace.UncollectedSkins.Pumpkin.CFrame)
+  	end    
+})
+
+CollectTab:AddButton({
+	Name = "Collect Rice Ball",
+	Callback = function()
+    Tween(workspace.UncollectedSkins["Rice Ball"].CFrame)
+  	end    
+})
+
+CollectTab:AddButton({
+	Name = "Collect Sakuramochi",
+	Callback = function()
+    Tween(workspace.UncollectedSkins.Sakuramochi.CFrame)
+  	end    
+})
+
+CollectTab:AddButton({
+	Name = "Collect Salad Leaf",
+	Callback = function()
+    Tween(workspace.UncollectedSkins["Salad Leaf"].CFrame)
+  	end    
+})
+
+CollectTab:AddButton({
+	Name = "Collect Salt Potato Chip",
+	Callback = function()
+    Tween(workspace.UncollectedSkins["Salt Potato Chip"].CFrame)
+  	end    
+})
+
+CollectTab:AddButton({
+	Name = "Collect Small Piece Of Cheese",
+	Callback = function()
+    Tween(workspace.UncollectedSkins["Small Piece Of Cheese"].CFrame)
+  	end    
+})
+
+CollectTab:AddButton({
+	Name = "Collect Sugar Cube",
+	Callback = function()
+    Tween(workspace.UncollectedSkins["Sugar Cube"].CFrame)
+  	end    
+})
+
+CollectTab:AddButton({
+	Name = "Collect Strawberry",
+	Callback = function()
+    Tween(workspace.UncollectedSkins.Strawberry.CFrame)
+  	end    
+})
+
+CollectTab:AddButton({
+	Name = "Collect Tamago Sushi",
+	Callback = function()
+    Tween(workspace.UncollectedSkins["Tamago Sushi"].CFrame)
+  	end    
+})
+
+CollectTab:AddButton({
+	Name = "Collect Tomato",
+	Callback = function()
+    Tween(workspace.UncollectedSkins.Tomato.CFrame)
+  	end    
+})
+
+CollectTab:AddButton({
+	Name = "Collect Watermelon",
+	Callback = function()
+    Tween(workspace.UncollectedSkins.Watermelon.CFrame)
+  	end    
+})
+
+local TpTab = Window:MakeTab({
+	Name = "Tab Teleport",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local StageTrainSection = TpTab:AddSection({
+	Name = "Stage Train Section"
+})
+
+TpTab:AddDropdown({
+	Name = "Select Stage Toy Train",
+	Default = "1",
+	Options = {"1", "2", "3", "4", "5"},
+	Callback = function(Value)
+	selectstagetrain = Value
+	end    
+})
+
+TpTab:AddButton({
+	Name = "Tp To Stage Train",
+	Callback = function()
+     TweenTp(workspace.ToyTrain[selectstagetrain].CFrame)
+  	end    
+})
+
+local HouseSection = TpTab:AddSection({
+	Name = "House Place Section"
+})
+
+TpTab:AddDropdown({
+	Name = "Select Place",
+	Default = "...",
+	Options = {"Cutting boards", "Skating area", "Top Refrigerator", "Sofa", "Front Tv", "Behide Tv", "Dinner table", "Game table", "Bookshelf", "Top Bookshelf", "Mysterious tunnel", "Chairs", "Air-conditioner", "Pots", "Styrofoam box", "Frames", "Washing machine", "Hand sink", "Body lotion frame"},
+	Callback = function(Value)
+	selectplace = Value
+	end    
+})
+
+TpTab:AddButton({
+	Name = "Tp to Place",
+	Callback = function()
+if selectplace == "..." then
+OrionLib:MakeNotification({
+	Name = "Orion Hub",
+	Content = "Please select a location to go there",
+	Image = "rbxassetid://4483345998",
+	Time = 3
+})
+elseif selectplace == "Cutting boards" then
+Tween(CFrame.new(-167.2939453125, 43.239356994628906, -51.28073501586914))
+elseif selectplace == "Skating area" then
+Tween(CFrame.new(-68.79549407958984, -6.015318870544434, 124.84772491455078))
+elseif selectplace == "Top Refrigerator" then
+Tween(CFrame.new(-5.823515892028809, 85.33843231201172, -89.01644134521484))
+elseif selectplace == "Sofa" then
+Tween(CFrame.new(52.188228607177734, 18.655014038085938, 194.65689086914062))
+elseif selectplace == "Front Tv" then
+Tween(CFrame.new(168.59326171875, 18.238250732421875, 196.1866455078125))
+elseif selectplace == "Behide Tv" then
+Tween(CFrame.new(180.7163543701172, 18.287065505981445, 197.2242889404297))
+elseif selectplace == "Dinner table" then
+Tween(CFrame.new(-12.043829917907715, 42.9599494934082, 25.65976333618164))
+elseif selectplace == "Game table" then
+Tween(CFrame.new(119.70698547363281, 14.137039184570312, 193.68919372558594))
+elseif selectplace == "Bookshelf" then
+Tween(CFrame.new(172.07998657226562, 55.58022689819336, -9.5766019821167))
+elseif selectplace == "Top Bookshelf" then
+Tween(CFrame.new(170.0970001220703, 93.05994415283203, 0.6084963083267212))
+elseif selectplace == "Mysterious tunnel" then
+Tween(CFrame.new(180.4864044189453, -4.153239727020264, -11.73713207244873))
+elseif selectplace == "Chairs" then
+Tween(CFrame.new(-33.910770416259766, 23.065053939819336, 19.025802612304688))
+elseif selectplace == "Air-conditioner" then
+Tween(CFrame.new(126.79120635986328, 117.18878173828125, 314.5452575683594))
+elseif selectplace == "Pots" then
+Tween(CFrame.new(-117.59017181396484, 16.126821517944336, 384.9138488769531))
+elseif selectplace == "Styrofoam box" then
+Tween(CFrame.new(-168.95677185058594, 86.14543914794922, 300.3447570800781))
+elseif selectplace == "Frames" then
+Tween(CFrame.new(-15.589682579040527, 95.10487365722656, 314.89306640625))
+elseif selectplace == "Washing machine" then
+Tween(CFrame.new(-444.3197937011719, 8.307300567626953, 296.6883850097656))
+elseif selectplace == "Hand sink" then
+Tween(CFrame.new(-386.2815246582031, 31.28902816772461, 300.7383728027344))
+elseif selectplace == "Body lotion frame" then
+Tween(CFrame.new(-243.6700897216797, 67.58553314208984, 297.29620361328125))
+end
+  	end    
+})
+
+local PlayerTab = Window:MakeTab({
+	Name = "Tab Player",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local PlayerSection = PlayerTab:AddSection({
+	Name = "View Section"
+})
+
+PlayerTab:AddDropdown({
+	Name = "Select Player",
+	Default = game.Players.LocalPlayer.Name,
+	Options = playerdrop,
+	Callback = function(Value)
+	selectplr = Value
+	end    
+})
+
+PlayerTab:AddButton({
+	Name = "Tp Player",
+	Callback = function()
+    TweenTp(game.Players:FindFirstChild(selectplr).Character.HumanoidRootPart.CFrame)
+  	end    
+})
+
+PlayerTab:AddToggle({
+	Name = "Spectator Player",
+	Default = false,
+	Callback = function(Value)
+getgenv().spectator = Value
+
+if spectator == true then
+game.Workspace.CurrentCamera.CameraSubject = game.Players:FindFirstChild(selectplr).Character
+else
+game.Workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character
+end
+	end    
+})
+else
+OrionLib:MakeNotification({
+	Name = "Errors!!!",
+	Content = "Script current has not support your current map!",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+end 
