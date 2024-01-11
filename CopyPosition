@@ -1,8 +1,14 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/thanhdat4461/OrionMoblie/main/source')))()
 
-local Window = OrionLib:MakeWindow({Name = "Copy Gui", HidePremium = false, SaveConfig = false, ConfigFolder = "OrionHub", "Loading..."})
+local Window = OrionLib:MakeWindow({Name = "Copy Gui", HidePremium = false, SaveConfig = false, ConfigFolder = "OrionHub", IntroText = "Loading..."})
 
 local currentpos = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+
+while wait() do
+pcall(function()
+currentpos = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+end
+end)
 
 local Tab = Window:MakeTab({
 	Name = "Tab Main",
