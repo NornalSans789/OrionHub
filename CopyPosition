@@ -24,6 +24,13 @@ Tab:AddButton({
   	end    
 })
 
+Tab:AddButton({
+	Name = "Fly Gui V3",
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
+  	end    
+})
+
 local CreditTab = Window:MakeTab({
         Name = "Tab Credit",
         Icon = "rbxassetid://4483345998",
