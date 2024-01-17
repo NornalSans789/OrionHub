@@ -405,6 +405,319 @@ game.Workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character
 end
 	end    
 })
+
+local CreditTab = Window:MakeTab({
+	Name = "Tab Credit",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local CreditSection = CreditTab:AddSection({
+	Name = "Script Owner Section"
+})
+
+CreditTab:AddLabel("By @SansYT789")
+
+CreditTab:AddButton({
+	Name = "Copy Discord",
+	Callback = function()
+setclipboard("https://discord.gg/E9vgWrUWP2")
+  	end    
+})
+elseif game.PlaceId == 15507705710 then
+OrionLib:MakeNotification({
+	Name = "Script Loading...",
+	Content = "Script has support your map: Nightlight",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+wait(0.15)
+local Window = OrionLib:MakeWindow({Name = "Nightlight", HidePremium = false, SaveConfig = false, ConfigFolder = "OrionHub", IntroText = "Loading Hub..."})
+local hightlight = Instance.new("Highlight")
+local rs = game:GetService("RunService")
+getgenv().selectnote = nil
+
+hightlight.Archivable = true
+hightlight.Adornee = nil
+hightlight.Parent = nil
+hightlight.Name = "Hightlight"
+hightlight.Enabled = true
+hightlight.FillColor = Color3.new(255,0,0)
+hightlight.FillTransparency = 0.5
+hightlight.OutlineColor = Color3.new(255,255,255)
+hightlight.OutlineTransparency = 0
+
+local MainTab = Window:MakeTab({
+	Name = "Tab Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local MainSection = MainTab:AddSection({
+	Name = "Esp Section"
+})
+
+MainTab:AddToggle({
+	Name = "Coins esp",
+	Default = false,
+	Callback = function(Value)
+getgenv().EspCoin = Value
+
+rs.RenderStepped:Connect(function()
+if EspCoin == true then
+for i,v in pairs(game:GetService("Workspace").House.Coins:GetChildren()) do
+if not v:FindFirstChild("hilicoin") then
+local hilicoin = hightlight:Clone()
+hilicoin.Name = "hilicoin"
+hilicoin.Parent = v
+hilicoin.Adornee = v
+hilicoin.FillColor = Color3.fromRGB(255,204,0)
+end
+end
+else
+if hilicoin ~= nil then
+hilicoin:Destroy()
+end
+end
+end)
+	end    
+})
+
+MainTab:AddToggle({
+	Name = "Matchs esp",
+	Default = false,
+	Callback = function(Value)
+getgenv().EspMatch = Value
+
+rs.RenderStepped:Connect(function()
+if EspMatch == true then
+for i,v in pairs(game:GetService("Workspace").Matches:GetChildren()) do
+if not v:FindFirstChild("hilimatch") then
+local hilimatch = hightlight:Clone()
+hilimatch.Name = "hilimatch"
+hilimatch.Parent = v
+hilimatch.Adornee = v
+hilimatch.FillColor = Color3.fromRGB(102,255,51)
+end
+end
+else
+if hilimatch ~= nil then
+hilimatch:Destroy()
+end
+end
+end)
+	end    
+})
+
+MainTab:AddToggle({
+	Name = "Monsters esp",
+	Default = false,
+	Callback = function(Value)
+getgenv().EspBeta = Value
+
+rs.RenderStepped:Connect(function()
+if EspBeta == true then
+for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+if not v:FindFirstChild("hilibeta") and v.Name == "Beta" then
+local hilibeta = hightlight:Clone()
+hilibeta.Name = "hilibeta"
+hilibeta.Parent = v
+hilibeta.Adornee = v
+end
+end
+else
+if hilibeta ~= nil then
+hilibeta:Destroy()
+end
+end
+end)
+	end    
+})
+
+MainTab:AddToggle({
+	Name = "Notes esp",
+	Default = false,
+	Callback = function(Value)
+getgenv().EspNote = Value
+
+rs.RenderStepped:Connect(function()
+if EspNote == true then
+for i,v in pairs(game:GetService("Workspace").Notes:GetChildren()) do
+if not v:FindFirstChild("hilinote") then
+local hilinote = hightlight:Clone()
+hilinote.Name = "hilinote"
+hilinote.Parent = v
+hilinote.Adornee = v
+hilinote.FillColor = Color3.fromRGB(204,102,0)
+end
+end
+else
+if hilinote ~= nil then
+hilinote:Destroy()
+end
+end
+end)
+	end    
+})
+
+MainTab:AddToggle({
+	Name = "Players esp",
+	Default = false,
+	Callback = function(Value)
+getgenv().EspPlayer = Value
+
+rs.RenderStepped:Connect(function()
+if EspPlayer == true then
+for i,v in pairs(game:GetService("Players"):GetChildren()) do
+if not v:FindFirstChild("hiliplayer") then
+local hiliplayer = hightlight:Clone()
+hiliplayer.Name = "hiliplayer"
+hiliplayer.Parent = v.Character
+hiliplayer.Adornee = v.Character
+hiliplayer.FillColor = Color3.fromRGB(0,128,255)
+end
+end
+else
+if hiliplayer ~= nil then
+hiliplayer:Destroy()
+end
+end
+end)
+	end    
+})
+
+local Main2Section = MainTab:AddSection({
+	Name = "Misc Section"
+})
+
+MainTab:AddButton({
+	Name = "Fullbright",
+	Callback = function()
+game:GetService("Lighting").Ambient = Color3.fromRGB(255,255,255)
+  	end    
+})
+
+MainTab:AddButton({
+	Name = "Tp to Exit Door",
+	Callback = function()
+    HMRP.CFrame = workspace.EscapeBox.CFrame
+  	end    
+})
+
+MainTab:AddButton({
+	Name = "Remove All Move Decoration",
+	Callback = function()
+workspace.House.MoveDecor:Destroy()
+  	end    
+})
+
+MainTab:AddSlider({
+	Name = "Walkspeed",
+	Min = 16,
+	Max = 500,
+	Default = 5,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "Speed",
+	Callback = function(Value)
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+	end    
+})
+
+local OtherTab = Window:MakeTab({
+	Name = "Tab Other",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local OtherSection = OtherTab:AddSection({
+	Name = "Visual Section"
+})
+
+OtherTab:AddToggle({
+	Name = "Tp Monster (Visual)",
+	Default = false,
+	Callback = function(Value)
+getgenv().TpMonster = Value
+
+if TpMonster == true then
+while TpMonster == true do
+wait(.1)
+workspace.Beta.CFrame = HMRP.CFrame * CFrame.new(0,0,10)
+end
+end
+	end    
+})
+
+OtherTab:AddButton({
+	Name = "Tp To Monster(Maybe Dangerous)",
+	Callback = function()
+    HMRP.CFrame = workspace.Beta.CFrame
+  	end    
+})
+
+OtherTab:AddToggle({
+	Name = "Spectator Monster",
+	Default = false,
+	Callback = function(Value)
+getgenv().spectatormonster = Value
+
+if spectatormonster == true then
+game.Workspace.CurrentCamera.CameraSubject = workspace.Beta
+else
+game.Workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character
+end
+	end    
+})
+
+local Other2Section = OtherTab:AddSection({
+	Name = "Note Section"
+})
+
+OtherTab:AddDropdown({
+	Name = "Select Note",
+	Default = "...",
+	Options = {"Note1", "Note2", "Note3", "Note4", "Note5", "Note6", "Note7", "Note8"},
+	Callback = function(Value)
+	selectnote = Value
+	end    
+})
+
+OtherTab:AddButton({
+	Name = "Tp To Note",
+	Callback = function()
+if selectnote ~= "..." then
+HMRP.CFrame = workspace.Notes:FindFirstChild(selectnote).CFrame
+end
+  	end    
+})
+
+local CreditTab = Window:MakeTab({
+	Name = "Tab Credit",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local CreditSection = CreditTab:AddSection({
+	Name = "Script Owner Section"
+})
+
+CreditTab:AddLabel("By @SansYT789")
+
+CreditTab:AddButton({
+	Name = "Copy Discord",
+	Callback = function()
+setclipboard("https://discord.gg/E9vgWrUWP2")
+  	end    
+})
+
+elseif game.PlaceId == 15272004567 then
+OrionLib:MakeNotification({
+	Name = "Errors!!!",
+	Content = "The script already supports this game, please go to the red box to enter the game to experience the script",
+	Image = "rbxassetid://4483345998",
+	Time = 15
+})
 else
 OrionLib:MakeNotification({
 	Name = "Errors!!!",
@@ -412,4 +725,4 @@ OrionLib:MakeNotification({
 	Image = "rbxassetid://4483345998",
 	Time = 5
 })
-end 
+end
