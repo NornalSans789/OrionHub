@@ -598,13 +598,6 @@ game:GetService("Lighting").Ambient = Color3.fromRGB(255,255,255)
 })
 
 MainTab:AddButton({
-	Name = "Tp to Exit Door",
-	Callback = function()
-    HMRP.CFrame = workspace.EscapeBox.CFrame
-  	end    
-})
-
-MainTab:AddButton({
 	Name = "Remove All Move Decoration",
 	Callback = function()
 workspace.House.MoveDecor:Destroy()
