@@ -1,8 +1,13 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/thanhdat4461/OrionMoblie/main/source')))()
 
 -- local linh tinh
+local WS = game:GetService("Workspace")
 local HMRP = game.Players.LocalPlayer.Character.HumanoidRootPart
 local HM = game.Players.LocalPlayer.Character.Humanoid
+local CHAR = game.Players.LocalPlayer.Character
+local NAME = game.Players.LocalPlayer.Name
+local player = game.Players:GetPlayers()
+local WSPlayers = WS.Characters:FindFirstChild(NAME)
 
 if game.PlaceId == 15240723287 then
 OrionLib:MakeNotification({
@@ -16,7 +21,7 @@ local Window = OrionLib:MakeWindow({Name = "Secret Staycation", HidePremium = fa
 
 -- local linh tinh :)
 local playerdrop = {}
-local player = game.Players:GetChildren()
+local speed = 175
 getgenv().selectplr = nil
 getgenv().selectstagetrain = nil
 getgenv().selectplace = nil
@@ -26,18 +31,33 @@ for i,v in pairs(player) do
 table.insert(playerdrop, v.Name)
 end
 
-function Tween(a)
-local b = (a.Position - game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").Position).Magnitude
-local speed = 175
-tweenrach = game:GetService('TweenService'):Create(game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart"),TweenInfo.new(b/speed,Enum.EasingStyle.Linear), {CFrame=a})
-tweenrach:Play()
-end
+spawn(function()
+local k = Instance.new("Part")
+k.Color = Color3.new(1,1,1)
+k.Transparency = 1
+k.Name = "Root"
+k.Size = Vector3.new(1,1,1)
+k.CanCollide = false
+k.Anchored = true
+k.Parent = game.Players.LocalPlayer.Character
+wait(0.1)
+game.Players.LocalPlayer.Character:FindFirstChild("Root").CFrame = HMRP.CFrame
+wait(0.1)
+local Root = game.Players.LocalPlayer.Character:FindFirstChild("Root")
+end)
 
-function TweenTp(a)
-local b = (a.Position - game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").Position).Magnitude
-local speedtp = 100
-tweenrach = game:GetService('TweenService'):Create(game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart"),TweenInfo.new(b/speedtp,Enum.EasingStyle.Linear), {CFrame=a})
+function Tween(a)
+local b = (a.p - game.Players.LocalPlayer.Character:FindFirstChild("Root").Position).Magnitude
+tweenrach = game:GetService('TweenService'):Create(game.Players.LocalPlayer.Character:FindFirstChild("Root"),TweenInfo.new(b/speed,Enum.EasingStyle.Linear), {CFrame=a})
 tweenrach:Play()
+game:GetService("RunService").Heartbeat:Connect(function()
+HMRP.CFrame = game.Players.LocalPlayer.Character:FindFirstChild("Root").CFrame
+end)
+if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
+while wait() do
+game.Players.LocalPlayer.Character:FindFirstChild("Root").CFrame = HMRP.CFrame
+end
+end
 end
 
 local CollectTab = Window:MakeTab({
@@ -304,7 +324,7 @@ TpTab:AddDropdown({
 TpTab:AddButton({
 	Name = "Tp To Stage Train",
 	Callback = function()
-     TweenTp(workspace.ToyTrain[selectstagetrain].CFrame)
+     Tween(workspace.ToyTrain[selectstagetrain].CFrame)
   	end    
 })
 
@@ -378,7 +398,7 @@ local PlayerSection = PlayerTab:AddSection({
 
 PlayerTab:AddDropdown({
 	Name = "Select Player",
-	Default = game.Players.LocalPlayer.Name,
+	Default = NAME,
 	Options = playerdrop,
 	Callback = function(Value)
 	selectplr = Value
@@ -388,7 +408,7 @@ PlayerTab:AddDropdown({
 PlayerTab:AddButton({
 	Name = "Tp Player",
 	Callback = function()
-    TweenTp(game.Players:FindFirstChild(selectplr).Character.HumanoidRootPart.CFrame)
+    Tween(game.Players:FindFirstChild(selectplr).Character.HumanoidRootPart.CFrame)
   	end    
 })
 
@@ -568,7 +588,7 @@ getgenv().EspPlayer = Value
 
 rs.RenderStepped:Connect(function()
 if EspPlayer == true then
-for i,v in pairs(game:GetService("Players"):GetChildren()) do
+for i,v in pairs(game:GetService("Players"):GetPlayers()) do
 if not v:FindFirstChild("hiliplayer") then
 local hiliplayer = hightlight:Clone()
 hiliplayer.Name = "hiliplayer"
@@ -633,12 +653,11 @@ OtherTab:AddToggle({
 	Callback = function(Value)
 getgenv().TpMonster = Value
 
+rs.Heartbeat:Connect(function()
 if TpMonster == true then
-while TpMonster == true do
-wait(.1)
-workspace.Beta.CFrame = HMRP.CFrame * CFrame.new(0,0,10)
+workspace.Beta.CFrame = HMRP.CFrame * CFrame.new(0,0,15)
 end
-end
+end)
 	end    
 })
 
@@ -658,7 +677,7 @@ getgenv().spectatormonster = Value
 if spectatormonster == true then
 game.Workspace.CurrentCamera.CameraSubject = workspace.Beta
 else
-game.Workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character
+game.Workspace.CurrentCamera.CameraSubject = CHAR
 end
 	end    
 })
@@ -717,5 +736,28 @@ OrionLib:MakeNotification({
 	Content = "Script current has not support your current map!",
 	Image = "rbxassetid://4483345998",
 	Time = 5
+})
+wait(0.15)
+local Window = OrionLib:MakeWindow({Name = "View Hub (Errors Hub)", HidePremium = false, SaveConfig = false, ConfigFolder = "OrionHub", IntroText = "Loading Errors Hub..."})
+
+local CreditTab = Window:MakeTab({
+	Name = "Tab Credit",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local CreditSection = CreditTab:AddSection({
+	Name = "Script Owner Section"
+})
+
+CreditTab:AddLabel("By @SansYT789")
+CreditTab:AddLabel("If you want to know more about what")
+CreditTab:AddLabel("maps this script supports, please visit our discord")
+
+CreditTab:AddButton({
+	Name = "Copy Discord",
+	Callback = function()
+setclipboard("https://discord.gg/E9vgWrUWP2")
+  	end    
 })
 end
