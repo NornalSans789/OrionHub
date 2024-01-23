@@ -47,11 +47,17 @@ local Root = game.Players.LocalPlayer.Character:FindFirstChild("Root")
 end)
 
 function Tween(a)
-local b = (a.p - game.Players.LocalPlayer.Character:FindFirstChild("Root").Position).Magnitude
+getgenv().Tween = true
+local b = (a.p-game.Players.LocalPlayer.Character:FindFirstChild("Root").Position).Magnitude
 tweenrach = game:GetService('TweenService'):Create(game.Players.LocalPlayer.Character:FindFirstChild("Root"),TweenInfo.new(b/speed,Enum.EasingStyle.Linear), {CFrame=a})
 tweenrach:Play()
+tweenrach.Completed:Connect(function()
+getgenv().Tween = false
+end)
 game:GetService("RunService").Heartbeat:Connect(function()
+if Tween == true then
 HMRP.CFrame = game.Players.LocalPlayer.Character:FindFirstChild("Root").CFrame
+end
 end)
 if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
 while wait() do
