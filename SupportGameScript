@@ -6,8 +6,6 @@ local HMRP = game.Players.LocalPlayer.Character.HumanoidRootPart
 local HM = game.Players.LocalPlayer.Character.Humanoid
 local CHAR = game.Players.LocalPlayer.Character
 local NAME = game.Players.LocalPlayer.Name
-local player = game.Players:GetPlayers()
-local WSPlayers = WS.Characters:FindFirstChild(NAME)
 
 if game.PlaceId == 15240723287 then
 OrionLib:MakeNotification({
@@ -21,6 +19,7 @@ local Window = OrionLib:MakeWindow({Name = "Secret Staycation", HidePremium = fa
 
 -- local linh tinh :)
 local playerdrop = {}
+local player = game.Players:GetPlayers()
 local speed = 175
 getgenv().selectplr = nil
 getgenv().selectstagetrain = nil
