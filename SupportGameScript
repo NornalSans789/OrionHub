@@ -19,7 +19,7 @@ local Window = OrionLib:MakeWindow({Name = "Secret Staycation", HidePremium = fa
 -- local linh tinh :)
 local playerdrop = {}
 local player = game.Players:GetPlayers()
-local WSPlayers = WS.Characters:FindFirstChild(game.Players.LocalPlayer.Name)
+local WSPlayers = WS:FindFirstChild(game.Players.LocalPlayer.Name)
 local speed = 175
 getgenv().selectplr = nil
 getgenv().selectstagetrain = nil
