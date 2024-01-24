@@ -2,10 +2,9 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/tha
 
 -- local linh tinh
 local WS = game:GetService("Workspace")
+local plr = game.Players.LocalPlayer
 local HMRP = game.Players.LocalPlayer.Character.HumanoidRootPart
 local HM = game.Players.LocalPlayer.Character.Humanoid
-local CHAR = game.Players.LocalPlayer.Character
-local NAME = game.Players.LocalPlayer.Name
 
 if game.PlaceId == 15240723287 then
 OrionLib:MakeNotification({
@@ -20,6 +19,7 @@ local Window = OrionLib:MakeWindow({Name = "Secret Staycation", HidePremium = fa
 -- local linh tinh :)
 local playerdrop = {}
 local player = game.Players:GetPlayers()
+local WSPlayers = WS.Characters:FindFirstChild(game.Players.LocalPlayer.Name)
 local speed = 175
 getgenv().selectplr = nil
 getgenv().selectstagetrain = nil
@@ -38,32 +38,46 @@ k.Name = "Root"
 k.Size = Vector3.new(1,1,1)
 k.CanCollide = false
 k.Anchored = true
-k.Parent = game.Players.LocalPlayer.Character
-wait(0.1)
-game.Players.LocalPlayer.Character:FindFirstChild("Root").CFrame = HMRP.CFrame
-wait(0.1)
-local Root = game.Players.LocalPlayer.Character:FindFirstChild("Root")
+k.Parent = WSPlayers.HumanoidRootPart
+wait(0.0000025)
+WSPlayers.HumanoidRootPart:FindFirstChild("Root").CFrame = HMRP.CFrame
+local Root = WSPlayers.HumanoidRootPart:FindFirstChild("Root")
 end)
 
 function Tween(a)
 getgenv().Tween = true
-local b = (a.p-game.Players.LocalPlayer.Character:FindFirstChild("Root").Position).Magnitude
-tweenrach = game:GetService('TweenService'):Create(game.Players.LocalPlayer.Character:FindFirstChild("Root"),TweenInfo.new(b/speed,Enum.EasingStyle.Linear), {CFrame=a})
+local b = (a.p-WSPlayers.HumanoidRootPart:FindFirstChild("Root").Position).Magnitude
+tweenrach = game:GetService('TweenService'):Create(WSPlayers.HumanoidRootPart:FindFirstChild("Root"),TweenInfo.new(b/speed,Enum.EasingStyle.Linear), {CFrame=a})
 tweenrach:Play()
 tweenrach.Completed:Connect(function()
 getgenv().Tween = false
 end)
 game:GetService("RunService").Heartbeat:Connect(function()
 if Tween == true then
-HMRP.CFrame = game.Players.LocalPlayer.Character:FindFirstChild("Root").CFrame
+HMRP.CFrame = WSPlayers.HumanoidRootPart:FindFirstChild("Root").CFrame
 end
 end)
 if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
 while wait() do
-game.Players.LocalPlayer.Character:FindFirstChild("Root").CFrame = HMRP.CFrame
+WSPlayers.HumanoidRootPart:FindFirstChild("Root").CFrame = HMRP.CFrame
 end
 end
 end
+
+local ChangelogTab = Window:MakeTab({
+	Name = "Tab Changelogs",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local ChangelogSection = ChangelogTab:AddSection({
+	Name = "Changelog Section"
+})
+
+ChangelogTab:AddLabel("+ Added a few items to the house place dropdown")
+ChangelogTab:AddLabel("+ Reworked the tween to not fall while flying and fixed its bug")
+ChangelogTab:AddLabel("!= Fixed an issue where the hacking menu was not displayed when")
+ChangelogTab:AddLabel("activating the script")
 
 local CollectTab = Window:MakeTab({
 	Name = "Tab Collect",
@@ -340,7 +354,7 @@ local HouseSection = TpTab:AddSection({
 TpTab:AddDropdown({
 	Name = "Select Place",
 	Default = "...",
-	Options = {"Cutting boards", "Skating area", "Top Refrigerator", "Sofa", "Front Tv", "Behide Tv", "Dinner table", "Game table", "Bookshelf", "Top Bookshelf", "Mysterious tunnel", "Chairs", "Air-conditioner", "Pots", "Styrofoam box", "Frames", "Washing machine", "Hand sink", "Body lotion frame"},
+	Options = {"Cutting boards", "Skating area", "Top Refrigerator", "Sofa", "Front Tv", "Behide Tv", "Dinner table", "Game table", "Bookshelf", "Top Bookshelf", "Mysterious tunnel", "Chairs", "Air-conditioner", "Pots", "Styrofoam box", "Frames", "Washing machine", "Hand sink", "Body lotion frame", "Rat Nest", "Outlet", "Trash can", "Air-conditioner remote", "Hairdryer", "Weight Scale", "Secret Door (Bathroom)", "Led Light", "Pots2", "Pots3", "Soup"},
 	Callback = function(Value)
 	selectplace = Value
 	end    
@@ -352,7 +366,7 @@ TpTab:AddButton({
 if selectplace == "Cutting boards" then
 Tween(CFrame.new(-167.2939453125, 43.239356994628906, -51.28073501586914))
 elseif selectplace == "Skating area" then
-Tween(CFrame.new(-68.79549407958984, -6.015318870544434, 124.84772491455078))
+Tween(workspace.KitchenRoom.SketingLink.Parts.CFrame)
 elseif selectplace == "Top Refrigerator" then
 Tween(CFrame.new(-5.823515892028809, 85.33843231201172, -89.01644134521484))
 elseif selectplace == "Sofa" then
@@ -387,6 +401,28 @@ elseif selectplace == "Hand sink" then
 Tween(CFrame.new(-386.2815246582031, 31.28902816772461, 300.7383728027344))
 elseif selectplace == "Body lotion frame" then
 Tween(CFrame.new(-243.6700897216797, 67.58553314208984, 297.29620361328125))
+elseif selectplace == "Rat Nest" then
+Tween(workspace.RatNest.CFrame)
+elseif selectplace == "Trash can" then
+Tween(workspace.KitchenRoom["Trash Can"].CFrame)
+elseif selectplace == "Outlet" then
+Tween(workspace.KitchenRoom.Outlet.CFrame)
+elseif selectplace == "Pots2" then
+Tween(workspace.KitchenRoom.CoenerTable.Plant_1.CFrame)
+elseif selectplace == "Pots3" then
+Tween(workspace.KitchenRoom.CoenerTable.Plant_2.CFrame)
+elseif selectplace == "Air-conditioner remote" then
+Tween(workspace.KitchenRoom.AirConditioner.Remote.CFrame)
+elseif selectplace == "Hairdryer" then
+Tween(workspace.Corridor.Hairdyer.Part.CFrame)
+elseif selectplace == "Weight Scale" then
+Tween(workspace.Corridor.WeightScale.CFrame)
+elseif selectplace == "Secret Door (Bathroom)" then
+Tween(workspace.Corridor.BathroomSecretDoor.CFrame)
+elseif selectplace == "Led Light" then
+Tween(workspace.KitchenRoom.Light.Light.CFrame)
+elseif selectplace == "Soup" then
+Tween(workspace.Soup.CFrame)
 end
   	end    
 })
@@ -577,8 +613,8 @@ hilinote.FillColor = Color3.fromRGB(204,102,0)
 end
 end
 else
-if hilinote ~= nil then
-hilinote:Destroy()
+if WS.Notes:GetChildren():FindFirstChild("hilinote") then
+WS.Notes:GetChildren().hilinote:Destroy()
 end
 end
 end)
@@ -603,8 +639,8 @@ hiliplayer.FillColor = Color3.fromRGB(0,128,255)
 end
 end
 else
-if hiliplayer ~= nil then
-hiliplayer:Destroy()
+if game.Players:GetPlayers().Character:FindFirstChild("hiliplayer") then
+game.Players:GetPlayers().Character.hiliplayer:Destroy()
 end
 end
 end)
@@ -682,7 +718,7 @@ getgenv().spectatormonster = Value
 if spectatormonster == true then
 game.Workspace.CurrentCamera.CameraSubject = workspace.Beta
 else
-game.Workspace.CurrentCamera.CameraSubject = CHAR
+game.Workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character
 end
 	end    
 })
