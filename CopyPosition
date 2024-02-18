@@ -1,6 +1,6 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/thanhdat4461/OrionMoblie/main/source')))()
 
-local Window = OrionLib:MakeWindow({Name = "Copy Gui", HidePremium = false, SaveConfig = false, ConfigFolder = "OrionHub", IntroText = "Loading..."})
+local Window = OrionLib:MakeWindow({Name = "Copy Pos Gui", HidePremium = false, SaveConfig = false, ConfigFolder = "OrionHub", IntroText = "Loading..."})
 
 local Tab = Window:MakeTab({
 	Name = "Tab Main",
@@ -8,19 +8,34 @@ local Tab = Window:MakeTab({
 	PremiumOnly = false
 })
 
-Tab:AddParagraph("Current Position Is:", tostring(game.Players.LocalPlayer.Character.HumanoidRootPart.Position))
+local SetPositionCurrent = Tab:AddParagraph("Current Pos Is:",..tostring(game.Players.LocalPlayer.Character.HumanoidRootPart.Position))
+
+spawn(function()
+while wait() do
+pcall(function()
+SetPositionCurrent:Set("Current Pos Is:",..tostring(game.Players.LocalPlayer.Character.HumanoidRootPart.Position))
+end)
+end
+end)
 
 Tab:AddButton({
-	Name = "Copy Current Position",
+	Name = "Copy Current Pos",
 	Callback = function()
 	setclipboard(tostring(game.Players.LocalPlayer.Character.HumanoidRootPart.Position))
   	end    
 })
 
 Tab:AddButton({
-	Name = "Copy PlaceId",
+	Name = "Copy Game Id",
 	Callback = function()
 	setclipboard(tostring(game.PlaceId))
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Copy Server Id",
+	Callback = function()
+	setclipboard(tostring(game.JobId))
   	end    
 })
 
@@ -28,6 +43,20 @@ Tab:AddButton({
 	Name = "Fly Gui V3",
 	Callback = function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Infinite Yield",
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Keyboard Script",
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
   	end    
 })
 
@@ -42,3 +71,10 @@ local CreditOwnerSection = CreditTab:AddSection({
 })
 
 CreditTab:AddLabel("By @SansYT789(Youtube)")
+
+CreditTab:AddButton({
+	Name = "Get Discord Server",
+	Callback = function()
+  setclipboard("https://discord.gg/E9vgWrUWP2")
+  	end    
+})
